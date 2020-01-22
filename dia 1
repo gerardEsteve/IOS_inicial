@@ -1,0 +1,82 @@
+var --> per declarar variables
+
+	var str: String --> li dones el valor que vols
+	var str = "hola" --> detecta ell sol que es un string, no la podras cambiar a int ni res, sempre serà un string
+
+let --> declarar variable constant --> un cop declarat no es pot canviar.
+
+--------
+
+Bucles: es defineixen per rang enlloc de recorrent la variable.
+
+--------
+
+Variable amb interrogant --> es opcional, pot ser nul o pot ser res
+Variable amb exclamacio --> ha de tenir valor 
+
+Entre el nom i el tipus sempre va un espai per convenció
+
+Constructora sempre amb init
+
+--------
+
+Ejercicio: 
+
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str : String = "Hello, playground"
+
+let str2 = "hola caracola"
+
+var arr : Array = ["hola", "js"]
+
+class Alumno {
+    var name: String?
+    var lastName: String?
+    var lastName2: String?
+    var age: Int?
+    var course: String?
+    
+    init(name: String, lastName:String, lastName2: String, age: Int, course: String) {
+        self.name = name
+        self.lastName = lastName
+        self.lastName2 = lastName2
+        self.age = age
+        self.course = course
+    }
+}
+
+var Juan: Alumno = Alumno.init(name: "Juan", lastName: "Rodriguez", lastName2: "Rodriguez", age: 22, course: "cuarto")
+var Lucas: Alumno = Alumno.init(name: "Lucas", lastName: "Martinez", lastName2: "Jimenez", age: 21, course: "tercero")
+
+var listaAlumnos = [Alumno]()
+
+listaAlumnos.append(Juan)
+listaAlumnos.append(Lucas)
+
+protocol FullNameable {
+    var fullName: String { get }
+}
+
+class Professor: FullNameable {
+    var fullName: String
+    
+    
+    init(completeName: String) {
+        fullName = completeName
+    }
+}
+
+for Alumno in listaAlumnos {
+    if let nombre = Alumno.name, let edad = Alumno.age {
+        print("\(nombre) \(edad)")
+    }
+}
+-------
+
+// Diferents maneres de crear un array:
+    let a = Array<Int>()
+    let b = [Int]()
+    let c = NSArray() // NS --> Next Step
